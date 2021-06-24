@@ -36,7 +36,7 @@ function App() {
   //   },
   // ];
 
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState< MovieData []>([]);
   const [searchValue, setSearchValue] = useState("");
   console.log(movies);
 
