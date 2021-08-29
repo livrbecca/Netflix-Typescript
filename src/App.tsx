@@ -36,7 +36,7 @@ function App() {
   //   },
   // ];
 
-  const [movies, setMovies] = useState< MovieData []>([]);
+  const [movies, setMovies] = useState<MovieData[]>([]);
   const [searchValue, setSearchValue] = useState("");
   console.log(movies);
 
@@ -63,10 +63,22 @@ function App() {
         <MovieListHeading heading={"LivFlix".toUpperCase()} />
       </div>
       <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-
-      <div className="container">
-        <MovieList movies={movies} />
-      </div>
+      {searchValue ? (
+        <div className="container">
+          <MovieList movies={movies} />
+        </div>
+      ) : (
+        <h2
+          style={{
+            color: "white",
+            textAlign: "center",
+            fontSize: "60px",
+            marginTop: "10%",
+          }}
+        >
+          Search for a series for film to begin...
+        </h2>
+      )}
     </div>
   );
 }
